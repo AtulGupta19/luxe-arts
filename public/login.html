@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXEART — Sign In</title>
+    <meta name="description"
+        content="Sign in to your LUXEART account. Access exclusive drops, collector pricing, and your order history.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+</head>
+
+<body class="auth-body">
+
+    <!-- Ambient Background -->
+    <div class="auth-bg">
+        <div class="auth-bg__orb auth-bg__orb--1"></div>
+        <div class="auth-bg__orb auth-bg__orb--2"></div>
+        <div class="auth-bg__orb auth-bg__orb--3"></div>
+    </div>
+
+    <!-- Back to Home -->
+    <a href="/" class="auth-back" id="backHome">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Back to Store
+    </a>
+
+    <main class="auth-container">
+        <!-- Brand -->
+        <div class="auth-brand">
+            <a href="/" class="auth-brand__logo">
+                <span class="auth-brand__mark">L</span>
+                LUXEART
+            </a>
+        </div>
+
+        <!-- Auth Card -->
+        <div class="auth-card" id="authCard">
+            <!-- Login Form -->
+            <div class="auth-panel" id="loginPanel">
+                <div class="auth-card__header">
+                    <span class="auth-card__label">Welcome Back</span>
+                    <h1 class="auth-card__title">Sign <em>In</em></h1>
+                    <p class="auth-card__subtitle">Access your collection, track orders, and get early drop access.</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="auth-form__group" id="loginEmailGroup">
+                        <label class="auth-form__label" for="loginEmail">Email Address</label>
+                        <input class="auth-form__input" type="email" id="loginEmail" name="email"
+                            placeholder="you@example.com" required autocomplete="email">
+                        <span class="auth-form__error" id="loginEmailError"></span>
+                    </div>
+
+                    <div class="auth-form__group" id="loginPasswordGroup">
+                        <label class="auth-form__label" for="loginPassword">Password</label>
+                        <div class="auth-form__password-wrap">
+                            <input class="auth-form__input" type="password" id="loginPassword" name="password"
+                                placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" class="auth-form__toggle-pw" data-target="loginPassword"
+                                aria-label="Toggle password visibility">
+                                <svg class="eye-open" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path
+                                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <svg class="eye-closed" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24" style="display:none">
+                                    <path
+                                        d="M3.98 8.223A10.477 10.477 0 001.934 12c1.292 4.338 5.31 7.5 10.066 7.5.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="auth-form__error" id="loginPasswordError"></span>
+                    </div>
+
+                    <div class="auth-form__alert" id="loginAlert" style="display:none;"></div>
+
+                    <button class="auth-form__submit btn btn--primary" type="submit" id="loginSubmitBtn">
+                        <span class="auth-form__submit-text">Sign In</span>
+                        <span class="auth-form__submit-loader" style="display:none;">
+                            <svg class="spinner" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25" />
+                                <path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+
+                <div class="auth-card__footer">
+                    <p>Don't have an account? <button class="auth-switch-btn" data-target="signup">Create
+                            Account</button></p>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-panel" id="signupPanel" style="display:none;">
+                <div class="auth-card__header">
+                    <span class="auth-card__label">Join the Inner Circle</span>
+                    <h1 class="auth-card__title">Create <em>Account</em></h1>
+                    <p class="auth-card__subtitle">Unlock exclusive drops, collector pricing, and early access to new
+                        works.</p>
+                </div>
+
+                <form class="auth-form" id="signupForm">
+                    <div class="auth-form__group" id="signupNameGroup">
+                        <label class="auth-form__label" for="signupName">Full Name</label>
+                        <input class="auth-form__input" type="text" id="signupName" name="name"
+                            placeholder="Your full name" required autocomplete="name">
+                        <span class="auth-form__error" id="signupNameError"></span>
+                    </div>
+
+                    <div class="auth-form__group" id="signupEmailGroup">
+                        <label class="auth-form__label" for="signupEmail">Email Address</label>
+                        <input class="auth-form__input" type="email" id="signupEmail" name="email"
+                            placeholder="you@example.com" required autocomplete="email">
+                        <span class="auth-form__error" id="signupEmailError"></span>
+                    </div>
+
+                    <div class="auth-form__group" id="signupPasswordGroup">
+                        <label class="auth-form__label" for="signupPassword">Password</label>
+                        <div class="auth-form__password-wrap">
+                            <input class="auth-form__input" type="password" id="signupPassword" name="password"
+                                placeholder="Min. 6 characters" required autocomplete="new-password" minlength="6">
+                            <button type="button" class="auth-form__toggle-pw" data-target="signupPassword"
+                                aria-label="Toggle password visibility">
+                                <svg class="eye-open" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path
+                                        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <svg class="eye-closed" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24" style="display:none">
+                                    <path
+                                        d="M3.98 8.223A10.477 10.477 0 001.934 12c1.292 4.338 5.31 7.5 10.066 7.5.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="auth-form__error" id="signupPasswordError"></span>
+                    </div>
+
+                    <div class="auth-form__alert" id="signupAlert" style="display:none;"></div>
+
+                    <button class="auth-form__submit btn btn--primary" type="submit" id="signupSubmitBtn">
+                        <span class="auth-form__submit-text">Create Account</span>
+                        <span class="auth-form__submit-loader" style="display:none;">
+                            <svg class="spinner" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25" />
+                                <path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+
+                <div class="auth-card__footer">
+                    <p>Already have an account? <button class="auth-switch-btn" data-target="login">Sign In</button></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="auth-trust">
+            <div class="auth-trust__item">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path
+                        d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+                <span>256-bit SSL</span>
+            </div>
+            <div class="auth-trust__item">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path
+                        d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                <span>Secure Authentication</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>

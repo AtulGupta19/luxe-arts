@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXEART — Original Art & Limited Edition Merch</title>
+  <meta name="description"
+    content="Own the art. Wear the vision. Original paintings and limited-edition artistic merchandise designed to stand out. Premium collectible artwork and streetwear.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+</head>
+
+<body>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast__icon">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M20 6L9 17l-5-5" />
+      </svg>
+    </span>
+    <span class="toast__text" id="toastText">Added to cart</span>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-mark">L</span>
+        LUXEART
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#featured" class="nav__link">Collection</a></li>
+        <li><a href="#originals" class="nav__link">Originals</a></li>
+        <li><a href="#merch" class="nav__link">Merch</a></li>
+        <li><a href="#drops" class="nav__link">Drops</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <!-- Auth Button -->
+        <a href="/login.html" class="nav__auth-btn" id="authBtn" aria-label="Sign in">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path
+              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+          </svg>
+          <span class="nav__auth-text" id="authText">Sign In</span>
+        </a>
+
+        <button class="nav__cart-btn" id="cartToggle" aria-label="Open cart">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <span class="nav__cart-count" id="cartCount">0</span>
+        </button>
+
+        <div class="nav__menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+      <span class="label hero__label">Limited Edition Art & Merch</span>
+      <h1 class="heading-xl hero__title">Own the Art.<br><em>Wear the Vision.</em></h1>
+      <p class="hero__subtitle">Original paintings and limited-edition artistic merch designed to stand out. Each piece
+        is a statement — not a product.</p>
+      <div class="hero__actions">
+        <a href="#originals" class="btn btn--primary">Explore Collection</a>
+        <a href="#about" class="btn btn--outline">The Story</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED COLLECTION ============ -->
+  <section class="section section--dark" id="featured">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">Curated Selection</span>
+        <div class="section-divider"></div>
+        <h2 class="heading-lg">Featured <em class="text-gold">Works</em></h2>
+        <p class="text-body">Hand-selected pieces from the latest collection. Each work exists in limited quantities —
+          once they're gone, they're gone.</p>
+      </div>
+
+      <div class="featured__grid">
+        <!-- Featured Card 1 -->
+        <div class="featured__card reveal" data-delay="0">
+          <span class="featured__card-badge"><span class="badge badge--gold">Featured</span></span>
+          <div class="featured__card-image">
+            <img src="images/painting-1.png" alt="Eternal Ember — Abstract gold and black painting" loading="lazy">
+            <div class="featured__card-overlay">
+              <button class="btn btn--primary btn--small add-to-cart-btn" data-id="1" data-name="Eternal Ember"
+                data-price="2400" data-image="images/painting-1.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="featured__card-info">
+            <h3 class="featured__card-title">Eternal Ember</h3>
+            <span class="featured__card-price">$2,400</span>
+          </div>
+        </div>
+
+        <!-- Featured Card 2 -->
+        <div class="featured__card reveal" data-delay="150">
+          <span class="featured__card-badge"><span class="badge badge--limited">Limited Edition</span></span>
+          <div class="featured__card-image">
+            <img src="images/painting-2.png" alt="Abyssal Drift — Deep ocean blue abstract painting" loading="lazy">
+            <div class="featured__card-overlay">
+              <button class="btn btn--primary btn--small add-to-cart-btn" data-id="2" data-name="Abyssal Drift"
+                data-price="3200" data-image="images/painting-2.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="featured__card-info">
+            <h3 class="featured__card-title">Abyssal Drift</h3>
+            <span class="featured__card-price">$3,200</span>
+          </div>
+        </div>
+
+        <!-- Featured Card 3 -->
+        <div class="featured__card reveal" data-delay="300">
+          <span class="featured__card-badge"><span class="badge badge--limited">1 of 5</span></span>
+          <div class="featured__card-image">
+            <img src="images/painting-3.png" alt="Crimson Revolt — Bold red and black abstract painting" loading="lazy">
+            <div class="featured__card-overlay">
+              <button class="btn btn--primary btn--small add-to-cart-btn" data-id="3" data-name="Crimson Revolt"
+                data-price="4800" data-image="images/painting-3.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="featured__card-info">
+            <h3 class="featured__card-title">Crimson Revolt</h3>
+            <span class="featured__card-price">$4,800</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ORIGINAL PAINTINGS ============ -->
+  <section class="section section--charcoal" id="originals">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">Original Works</span>
+        <div class="section-divider"></div>
+        <h2 class="heading-lg">The <em class="text-gold">Originals</em></h2>
+        <p class="text-body">Each painting carries the weight of intention — raw texture, bold gesture, and a story that
+          refuses to be whispered.</p>
+      </div>
+
+      <div class="products__grid">
+        <!-- Product 1 -->
+        <div class="product-card reveal">
+          <div class="product-card__image">
+            <span class="product-card__badge"><span class="badge badge--limited">Limited Edition</span></span>
+            <span class="product-card__stock"><span class="badge badge--low-stock">3 Left</span></span>
+            <img src="images/painting-1.png" alt="Eternal Ember painting" loading="lazy">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--small add-to-cart-btn" style="width:100%" data-id="1"
+                data-name="Eternal Ember" data-price="2400" data-image="images/painting-1.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Original Painting</span>
+            <h3 class="product-card__title">Eternal Ember</h3>
+            <p class="product-card__desc">Born from the tension between silence and eruption. Gold leaf meets raw
+              charcoal on deep cotton canvas — a meditation on permanence.</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">$2,400</span>
+              <button class="product-card__add-btn add-to-cart-btn" data-id="1" data-name="Eternal Ember"
+                data-price="2400" data-image="images/painting-1.png" aria-label="Add Eternal Ember to cart">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card reveal" data-delay="150">
+          <div class="product-card__image">
+            <span class="product-card__badge"><span class="badge badge--limited">1 of 5</span></span>
+            <img src="images/painting-2.png" alt="Abyssal Drift painting" loading="lazy">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--small add-to-cart-btn" style="width:100%" data-id="2"
+                data-name="Abyssal Drift" data-price="3200" data-image="images/painting-2.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Original Painting</span>
+            <h3 class="product-card__title">Abyssal Drift</h3>
+            <p class="product-card__desc">Fluid layers of midnight blue collide with silver light — capturing the quiet
+              violence of deep ocean currents. Museum-grade archival canvas.</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">$3,200</span>
+              <button class="product-card__add-btn add-to-cart-btn" data-id="2" data-name="Abyssal Drift"
+                data-price="3200" data-image="images/painting-2.png" aria-label="Add Abyssal Drift to cart">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card reveal" data-delay="300">
+          <div class="product-card__image">
+            <span class="product-card__badge"><span class="badge badge--gold">Signature Piece</span></span>
+            <span class="product-card__stock"><span class="badge badge--low-stock">1 Left</span></span>
+            <img src="images/painting-3.png" alt="Crimson Revolt painting" loading="lazy">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--small add-to-cart-btn" style="width:100%" data-id="3"
+                data-name="Crimson Revolt" data-price="4800" data-image="images/painting-3.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Original Painting</span>
+            <h3 class="product-card__title">Crimson Revolt</h3>
+            <p class="product-card__desc">An act of defiance on canvas. Deep crimson bleeds into obsidian — raw,
+              emotional, unapologetic. Signed and numbered, certificate included.</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">$4,800</span>
+              <button class="product-card__add-btn add-to-cart-btn" data-id="3" data-name="Crimson Revolt"
+                data-price="4800" data-image="images/painting-3.png" aria-label="Add Crimson Revolt to cart">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MERCH COLLECTION ============ -->
+  <section class="section section--dark" id="merch">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">Wearable Art</span>
+        <div class="section-divider"></div>
+        <h2 class="heading-lg">The <em class="text-gold">Merch</em></h2>
+        <p class="text-body">Artistic streetwear for those who refuse to blend in. Limited runs. No restocks. Wear the
+          vision.</p>
+      </div>
+
+      <div class="products__grid">
+        <!-- Merch 1: Hoodie -->
+        <div class="product-card reveal">
+          <div class="product-card__image">
+            <span class="product-card__badge"><span class="badge badge--limited">Limited Run</span></span>
+            <img src="images/merch-hoodie.png" alt="Luxeart signature hoodie" loading="lazy">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--small add-to-cart-btn" style="width:100%" data-id="4"
+                data-name="Signature Hoodie" data-price="185" data-image="images/merch-hoodie.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Hoodie</span>
+            <h3 class="product-card__title">Signature Hoodie</h3>
+            <p class="product-card__desc">Heavyweight 400gsm cotton. Abstract gold print. Oversized fit. Art you can
+              wear.</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">$185</span>
+              <button class="product-card__add-btn add-to-cart-btn" data-id="4" data-name="Signature Hoodie"
+                data-price="185" data-image="images/merch-hoodie.png" aria-label="Add Signature Hoodie to cart">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Merch 2: T-shirt -->
+        <div class="product-card reveal" data-delay="150">
+          <div class="product-card__image">
+            <span class="product-card__badge"><span class="badge badge--limited">Drop 001</span></span>
+            <img src="images/merch-tshirt.png" alt="Luxeart abstract tee" loading="lazy">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--small add-to-cart-btn" style="width:100%" data-id="5"
+                data-name="Abstract Tee" data-price="95" data-image="images/merch-tshirt.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">T-Shirt</span>
+            <h3 class="product-card__title">Abstract Tee</h3>
+            <p class="product-card__desc">Premium organic cotton. Minimal art motif. Relaxed silhouette. Statement
+              without words.</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">$95</span>
+              <button class="product-card__add-btn add-to-cart-btn" data-id="5" data-name="Abstract Tee" data-price="95"
+                data-image="images/merch-tshirt.png" aria-label="Add Abstract Tee to cart">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Merch 3: Poster -->
+        <div class="product-card reveal" data-delay="300">
+          <div class="product-card__image">
+            <span class="product-card__badge"><span class="badge badge--gold">Signed</span></span>
+            <span class="product-card__stock"><span class="badge badge--low-stock">5 Left</span></span>
+            <img src="images/merch-poster.png" alt="Luxeart art print poster" loading="lazy">
+            <div class="product-card__quick-add">
+              <button class="btn btn--primary btn--small add-to-cart-btn" style="width:100%" data-id="6"
+                data-name="Gallery Print" data-price="240" data-image="images/merch-poster.png">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Art Print</span>
+            <h3 class="product-card__title">Gallery Print</h3>
+            <p class="product-card__desc">Museum-quality giclée print. Archival paper. Hand-signed and numbered. Ready
+              to frame.</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">$240</span>
+              <button class="product-card__add-btn add-to-cart-btn" data-id="6" data-name="Gallery Print"
+                data-price="240" data-image="images/merch-poster.png" aria-label="Add Gallery Print to cart">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXCLUSIVE DROPS / COUNTDOWN ============ -->
+  <section class="section drops" id="drops">
+    <div class="drops__bg"></div>
+    <div class="container">
+      <div class="drops__inner">
+        <div class="drops__content reveal-left">
+          <span class="label" style="display:block; margin-bottom:16px;">Next Drop</span>
+          <h2 class="heading-lg">Exclusive <em class="text-gold">Drop 002</em></h2>
+          <p class="text-body">A new collection of original works and limited merch. Only available for 48 hours. No
+            restocks. Set your alarm.</p>
+          <div class="drops__countdown" id="countdown">
+            <div class="drops__countdown-item">
+              <span class="drops__countdown-number" id="countDays">14</span>
+              <span class="drops__countdown-label">Days</span>
+            </div>
+            <div class="drops__countdown-item">
+              <span class="drops__countdown-number" id="countHours">08</span>
+              <span class="drops__countdown-label">Hours</span>
+            </div>
+            <div class="drops__countdown-item">
+              <span class="drops__countdown-number" id="countMins">42</span>
+              <span class="drops__countdown-label">Minutes</span>
+            </div>
+            <div class="drops__countdown-item">
+              <span class="drops__countdown-number" id="countSecs">17</span>
+              <span class="drops__countdown-label">Seconds</span>
+            </div>
+          </div>
+          <a href="#newsletter" class="btn btn--primary">Get Early Access</a>
+        </div>
+        <div class="drops__image reveal-right">
+          <img src="images/painting-3.png" alt="Upcoming exclusive drop preview" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section class="section section--dark" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-wrapper reveal-left">
+          <img src="images/painting-2.png" alt="The artist at work in the studio" loading="lazy">
+          <div class="about__image-accent"></div>
+        </div>
+        <div class="about__content reveal-right">
+          <span class="label">The Artist</span>
+          <h2 class="heading-lg">The Vision Behind<br><em class="text-gold">The Art</em></h2>
+          <p class="text-body">
+            Every piece begins with a question — not a plan. I don't paint what's comfortable. I paint what demands to
+            exist. The canvas becomes a battlefield of intention, where raw emotion meets deliberate chaos.
+          </p>
+          <p class="text-body">
+            LUXEART is more than a brand. It's a refusal to settle. Each painting is an original — never printed,
+            never reproduced. The merch is designed to carry the same energy: bold, unapologetic, finite. When a piece
+            is gone, it's gone forever.
+          </p>
+          <p class="text-body">
+            This isn't for everyone. It's for those who see art not as decoration, but as identity.
+          </p>
+          <div class="about__stats">
+            <div>
+              <span class="about__stat-number">200+</span>
+              <span class="about__stat-label">Original Works</span>
+            </div>
+            <div>
+              <span class="about__stat-number">50+</span>
+              <span class="about__stat-label">Countries</span>
+            </div>
+            <div>
+              <span class="about__stat-number">12K</span>
+              <span class="about__stat-label">Collectors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section section--charcoal" id="testimonials">
+    <div class="container container--narrow">
+      <div class="section__header reveal">
+        <span class="label">From The Collectors</span>
+        <div class="section-divider"></div>
+        <h2 class="heading-lg">What They <em class="text-gold">Say</em></h2>
+      </div>
+
+      <div class="testimonials__slider reveal">
+        <div class="testimonials__track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">The moment I saw Eternal Ember in person, I knew it had to be mine. The
+              texture, the depth — photographs don't do it justice. This is the kind of art that changes a room.</p>
+            <span class="testimonial-card__author">Alexandra Chen</span>
+            <span class="testimonial-card__role">Private Collector, New York</span>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">I've collected contemporary art for fifteen years. LUXEART is
+              something different — it's raw, intentional, and impossibly current. Every piece feels like it was painted
+              tomorrow.</p>
+            <span class="testimonial-card__author">Marcus Okonkwo</span>
+            <span class="testimonial-card__role">Gallery Director, London</span>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">The packaging alone told me this brand understands luxury. But the
+              hoodie? It's the most beautifully designed piece of clothing I've ever owned. Art meets streetwear,
+              perfectly.</p>
+            <span class="testimonial-card__author">Yuki Tanaka</span>
+            <span class="testimonial-card__role">Creative Director, Tokyo</span>
+          </div>
+        </div>
+        <div class="testimonials__dots" id="testimonialsDots">
+          <button class="testimonials__dot active" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="testimonials__dot" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="testimonials__dot" data-index="2" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PACKAGING ============ -->
+  <section class="section section--dark" id="packaging">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="label">The Experience</span>
+        <div class="section-divider"></div>
+        <h2 class="heading-lg">Premium <em class="text-gold">Packaging</em></h2>
+        <p class="text-body">Every order is a ritual. From our hands to yours — with intention.</p>
+      </div>
+
+      <div class="packaging__grid">
+        <div class="packaging__visual reveal-left">
+          <div class="packaging__box">
+            <div class="packaging__box-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+              </svg>
+            </div>
+            <h3 class="packaging__box-title">Matte Black Collector's Box</h3>
+            <p class="packaging__box-text">Gold foil branding. Magnetic closure.</p>
+          </div>
+        </div>
+
+        <div class="packaging__features reveal-right">
+          <div class="packaging__feature">
+            <div class="packaging__feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path
+                  d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="packaging__feature-title">Certificate of Authenticity</h4>
+              <p class="packaging__feature-text">Hand-signed, numbered, and embossed on cotton paper. Your proof of
+                ownership.</p>
+            </div>
+          </div>
+
+          <div class="packaging__feature">
+            <div class="packaging__feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path
+                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="packaging__feature-title">Archival-Grade Protection</h4>
+              <p class="packaging__feature-text">Acid-free tissue, foam-core backing, humidity-controlled shipping.
+                Gallery standards.</p>
+            </div>
+          </div>
+
+          <div class="packaging__feature">
+            <div class="packaging__feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path
+                  d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="packaging__feature-title">Global Insured Shipping</h4>
+              <p class="packaging__feature-text">Fully insured, tracked delivery worldwide. White-glove handling for
+                originals.</p>
+            </div>
+          </div>
+
+          <div class="packaging__feature">
+            <div class="packaging__feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="packaging__feature-title">Personal Touch</h4>
+              <p class="packaging__feature-text">Hand-written thank you note from the artist with every order. Because
+                every collector matters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIP / NEWSLETTER ============ -->
+  <section class="section newsletter" id="newsletter">
+    <div class="newsletter__bg"></div>
+    <div class="container">
+      <div class="newsletter__inner reveal">
+        <span class="label" style="display:block; margin-bottom:16px;">VIP Access</span>
+        <h2 class="heading-lg">Join the <em class="text-gold">Inner Circle</em></h2>
+        <p class="text-body">Early access to drops. Studio previews. Collector-only pricing. No spam — just the art that
+          matters.</p>
+        <form class="newsletter__form" id="newsletterForm">
+          <input type="email" class="newsletter__input" placeholder="Your email address" required
+            aria-label="Email address">
+          <button type="submit" class="btn btn--primary">Join Now</button>
+        </form>
+        <p class="newsletter__note">Join 12,000+ collectors worldwide. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">
+            <span class="nav__logo-mark" style="width:28px;height:28px;font-size:0.65rem;">L</span>
+            LUXEART
+          </div>
+          <p class="footer__brand-desc">Original art and limited-edition merch for those who see the world differently.
+            Every piece — a statement. Every drop — final.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Shop</h4>
+          <a href="#originals">Original Paintings</a>
+          <a href="#merch">Merch Collection</a>
+          <a href="#drops">Exclusive Drops</a>
+          <a href="#">Gift Cards</a>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Info</h4>
+          <a href="#about">About the Artist</a>
+          <a href="#">Shipping & Returns</a>
+          <a href="#">Care Guide</a>
+          <a href="#">FAQ</a>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 LUXEART. All rights reserved.</span>
+        <div class="footer__payment">
+          <span class="footer__payment-icon">VISA</span>
+          <span class="footer__payment-icon">MC</span>
+          <span class="footer__payment-icon">AMEX</span>
+          <span class="footer__payment-icon">PP</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your Cart</h2>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-drawer__items" id="cartItems">
+      <div class="cart-drawer__empty" id="cartEmpty">
+        <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+          <path
+            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg>
+        <p>Your cart is empty</p>
+        <p class="text-small" style="margin-top:8px;">Discover something extraordinary</p>
+      </div>
+    </div>
+
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none;">
+      <div class="cart-drawer__subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0</span>
+      </div>
+      <div class="cart-drawer__subtotal">
+        <span>Shipping</span>
+        <span>Complimentary</span>
+      </div>
+      <div class="cart-drawer__total">
+        <span>Total</span>
+        <span class="cart-drawer__total-amount" id="cartTotal">$0</span>
+      </div>
+      <button class="btn btn--primary cart-drawer__checkout" id="checkoutBtn">Secure Checkout</button>
+      <div class="cart-drawer__secure">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path
+            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+        </svg>
+        <span>256-bit SSL encrypted &bull; Secure checkout</span>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

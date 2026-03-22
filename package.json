@@ -1,0 +1,28 @@
+{
+  "name": "luxeart",
+  "version": "1.0.0",
+  "description": "LUXEART — Original Art & Limited Edition Merch",
+  "main": "server.js",
+  "homepage": "https://<yourname>.github.io/<repo>",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "predeploy": "echo no build step",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "art",
+    "ecommerce",
+    "luxury"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
